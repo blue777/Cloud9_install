@@ -285,8 +285,7 @@ compile_tmux(){
   cd "$C9_DIR"
   echo ":Compiling ncurses..."
   tar xzf ncurses-5.9.tar.gz
-  DOWNLOAD https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.0.tar.gz
-  ncurses-6.0.tar.gz
+  DOWNLOAD https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.0.tar.gz ncurses-6.0.tar.gz
   tar xzf ncurses-6.0.tar.gz
   cp ./ncurses-6.0/config.guess ./ncurses-5.9
   rm -r ncurses-6.0 
