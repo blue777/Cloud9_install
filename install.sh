@@ -63,6 +63,7 @@ start() {
     *arm64*) arch=arm64 ;;
     *armv6l*) arch=armv6l ;;
     *armv7l*) arch=armv7l ;;
+    *aarch64*) arch=arm64 ;;
     *x86_64*) arch=x64 ;;
     *i*86*) arch=x86 ;;
     *)
@@ -284,6 +285,12 @@ compile_tmux(){
   cd "$C9_DIR"
   echo ":Compiling ncurses..."
   tar xzf ncurses-5.9.tar.gz
+  DOWNLOAD https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.0.tar.gz
+  ncurses-6.0.tar.gz
+  tar xzf ncurses-6.0.tar.gz
+  cp ./ncurses-6.0/config.guess ./ncurses-5.9
+  rm -r ncurses-6.0 
+  rm ncurses-6.0.tar.gz
   rm ncurses-5.9.tar.gz
   cd ncurses-5.9
   echo ":Configuring Ncurses"
